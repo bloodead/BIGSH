@@ -1,42 +1,85 @@
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-extern char**	environ;
-
-void	child(int fd)
+char** id_print_word(char* str, char** ptr)
 {
-	char*	tab[2];
+	int	pos;
+	int	pos2;
+	int	count;
 
-	tab[0] = "/bin/cat";
-	tab[1] = 0;
-	if (dup2(fd, 0) == -1)
-		return ;
-	close(fd);
-	execve(tab[0], tab, environ);
-	printf("OHMERGED\n");
+	pos = 0;
+	pos2 = 0;
+	count = 0;
+	while (str[pos] != '\0')
+	{
+		ptr[count][pos] = str[pos2];
+		pos = pos + 1;
+		pos2 = pos2 + 1;
+		if (str[pos2] == ' ')
+		{
+			count = count + 1;
+			pos = 0;
+		}
+		while (str[pos2] == ' ')
+				pos2 = pos2 + 1;
+	}
+	return (ptr);
 }
 
-int	main(int argc, char** argv)
+int	id_count_letters(char* str, int* pos)
 {
-	int	fd;
-	int	ret;
+	int	count;
 
-	if (argc > 1)
+	count = 0;
+	while (str[*pos] != ' ' || '\0')
 	{
-		fd = open(argv[1], O_RDONLY, 0700);
-		if (fd == -1)
-			return (42);
-		ret = fork();
-		if (ret == -1)
-		{
-			close(fd);
-			return (42);
-		}
-		if (ret != 0)
-			wait();
-		else if (ret == 0)
-			child(fd);
+		printf("lettre : %c\n",str[*pos]);
+		printf("count : %d\n",count);
+		sleep(1);
+		printf("%d\n", *pos);
+		*pos = *pos + 1;
+		count  = count + 1;
 	}
-	return (0);
+	*pos = *pos + 1;
+	return (count);
+}
+
+int	id_count_words(char* str)
+{
+	int	pos;
+	int	count;
+
+	pos = 0;
+	count = 0;
+	while (str[pos] != '\0')
+	{
+		if (str[pos] == ' ')
+			count = count + 1;
+		while (str[pos] == ' ')
+			pos = pos + 1;
+		pos = pos + 1;
+	}
+	return (count + 1);
+}
+
+char**	 id_str_to_word_tab(char* str)
+{
+	int	count;
+	int	count2;
+	int	ret_letters;
+	int	pos;
+	char**	ptr;
+	
+	pos = 0;
+	count2 = 0;
+	count = id_count_words(str);
+	ptr = malloc(sizeof(char) * count);
+	while (count2 != count)
+	{
+		ret_letters = id_count_letters(str, &pos);
+		ptr[count2] = malloc(sizeof(char) * ret_letters);	
+		count2 = count2 + 1;
+	}
+	ptr = id_print_word(str, ptr);
+	return (ptr);
 }
