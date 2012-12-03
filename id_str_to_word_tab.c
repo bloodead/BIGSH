@@ -31,12 +31,13 @@ int	id_count_letters(char* str, int* pos)
 	int	count;
 
 	count = 0;
-	while (str[*pos] != ' ' || '\0')
+	while (str[*pos] != '\0')
 	{
-		printf("lettre : %c\n",str[*pos]);
-		printf("count : %d\n",count);
-		sleep(1);
-		printf("%d\n", *pos);
+		if(str[*pos] == ' ')
+		{
+			*pos = *pos + 1;
+			return (count);
+		}
 		*pos = *pos + 1;
 		count  = count + 1;
 	}
@@ -81,5 +82,6 @@ char**	 id_str_to_word_tab(char* str)
 		count2 = count2 + 1;
 	}
 	ptr = id_print_word(str, ptr);
+	
 	return (ptr);
 }
