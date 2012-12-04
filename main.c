@@ -16,12 +16,15 @@ int	main(void)
 
 	begin = init();
 	str = "0";
-	while (check_exit(str) != 1)
+	i = 0;
+	while (1)
 	{
 		str = id_getline(0);
 		str2 = id_str_to_word_tab(str);
-		if (check_list(begin,str) == 0)
+		if (check_list(begin,str2[0]) == 0)
 			id_print_str("Error command\n");
+		else
+			exec_command(str2);
 	}
 	return (0);
 }

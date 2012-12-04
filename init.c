@@ -15,6 +15,7 @@ t_list*	init(void)
 	elem = (t_list*)malloc(sizeof(*elem));
 	begin = elem;
 	print_list("cat", elem);
+	elem = elem->next;
 	print_list("exit", elem);
 	elem->next = 0;
 	return (begin);
