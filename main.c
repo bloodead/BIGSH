@@ -21,11 +21,7 @@ int	main(void)
 		str = id_getline(0);
 		str2 = id_str_to_word_tab(str);
 		if (check_list(begin,str) == 0)
-		{
-			id_print_str("Error command");
-		}
-		else
-			id_print_str("TROUVER COMMAND");
+			id_print_str("Error command\n");
 	}
 	return (0);
 }
