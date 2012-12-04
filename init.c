@@ -1,6 +1,7 @@
+#include <stdlib.h>
 #include "base.h"
 
-void	print_list(char* str, void* fct, t_list* elem)
+void	print_list(char* str, t_list* elem)
 {
 	elem->name = str;
 	elem->next = (t_list*)malloc(sizeof(*elem));
