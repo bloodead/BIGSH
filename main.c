@@ -1,28 +1,23 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include "base.h"
 
-void id_print_str(char* str)
+extern char**	environ;
+
+
+int	main(void)
 {
-	int num_pos;
-	num_pos = 0;
-	while(str[num_pos] != '\0')
+	char*	str;
+
+	while (check_exit(str) != 1)
 	{
-		write(1,str + num_pos,1);
-		num_pos = num_pos + 1;
-		
+		str = id_getline(0);
 	}
-}
 
+	printf("");
 
-void main(void)
-{
-	char    str[] = "coucou sa va";
-
-	char** ptr;
-	str[12] = '\0';
-	ptr = id_str_to_word_tab(str);
-	id_print_str(ptr[0]);
-	id_print_str(ptr[1]);
-	id_print_str(ptr[2]);
+	return (0);
 }
 
