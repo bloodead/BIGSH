@@ -15,15 +15,17 @@ int	main(void)
 	t_list*	begin;
 
 	begin = init();
+	str = "0";
 	while (check_exit(str) != 1)
 	{
 		str = id_getline(0);
 		str2 = id_str_to_word_tab(str);
-		if (check_list == 0)
+		if (check_list(begin,str) == 0)
 		{
 			id_print_str("Error command");
-			return (0);
 		}
+		else
+			id_print_str("TROUVER COMMAND");
 	}
 	return (0);
 }

@@ -1,13 +1,29 @@
 #include "base.h"
+#include <stdio.h>
+
+int	check_char(char* one, char* tow)
+{
+	int	i;
+
+	i = 0;
+	while (one[i] != '\0' || tow[i] != '\0')
+	{
+		if (one[i] != tow[i])
+			return 0;
+		i = i + 1;
+	}
+	if (one[i] == tow[i])
+		return 1;
+}
 
 int	check_list(t_list* begin, char* str)
 {
 	t_list*	elem;
 
 	elem = begin;
-	while (elem->next != 0)
+	while (elem != 0)
 	{
-		if (str == elem->name)
+		if (check_char(str,elem->name))
 			return (1);
 		elem = elem->next;
 	}
