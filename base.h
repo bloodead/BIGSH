@@ -8,6 +8,7 @@ typedef struct	s_list_command
 	struct	s_list_command*	next;
 }		t_list;
 
+void	id_free(char* str, char** str2, t_list*);
 int     redirect_fd_pip(int fd);
 void	cat_command(char** str);
 void	exit_command(char** str);
