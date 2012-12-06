@@ -1,20 +1,7 @@
 #include "base.h"
+#include <unistd.h>
 #include <stdio.h>
 
-void	child(int pip[2])
-{
-	char*	tab[3];
-
-	tab[0] = "/bin/grep";
-	tab[1] = "v";
-	tab[2] = 0;
-	if (dup2(pip[0], 0) == -1)
-		return ;
-	close(pip[0]);
-	close(pip[1]);
-	execve(tab[0], tab, environ);
-	printf("OHMERGED");
-}
 
 int	check_char(char* one, char* tow)
 {
@@ -31,15 +18,20 @@ int	check_char(char* one, char* tow)
 		return 1;
 }
 
-int	check_list(t_list* begin, char* str)
+int	check_list(t_list* begin, char** str)
 {
 	t_list*	elem;
 
 	elem = begin;
 	while (elem != 0)
 	{
-		if (check_char(str,elem->name))
+		if (check_char(str[0],elem->name))
+		
+		{
+			
+			elem->func(str);
 			return (1);
+		}
 		elem = elem->next;
 	}
 	return (0);

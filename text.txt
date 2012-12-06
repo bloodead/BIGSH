@@ -1,0 +1,13 @@
+total 24
+-rwxr-xr-x 1 calleg_a gp2017 12291 Dec  6 12:28 a.out
+-rw-r--r-- 1 calleg_a gp2017   504 Dec  6 12:28 base.h
+-rw-r--r-- 1 calleg_a gp2017   599 Dec  6 12:25 check_base_command.c
+-rw-r--r-- 1 calleg_a gp2017    21 Dec  4 16:00 command_base.c
+-rw-r--r-- 1 calleg_a gp2017   343 Dec  6 12:28 exec_command.c
+-rw-r--r-- 1 calleg_a gp2017   672 Dec  4 13:49 id_getline.c
+-rw-r--r-- 1 calleg_a gp2017   198 Dec  4 13:58 id_print_str.c
+-rw-r--r-- 1 calleg_a gp2017  1275 Dec  4 14:25 id_str_to_word_tab.c
+-rw-r--r-- 1 calleg_a gp2017   439 Dec  6 12:25 init.c
+-rw-r--r-- 1 calleg_a gp2017   484 Dec  6 12:22 main.c
+-rw-r--r-- 1 calleg_a gp2017   131 Dec  6 11:59 pip.c
+-rw-r--r-- 1 calleg_a gp2017     0 Dec  6 12:29 text.txt
