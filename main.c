@@ -25,6 +25,7 @@ int	main(void)
 	i = 0;
 	while (i != 50)
 	{
+		id_print_str("SHELL BLOODEAD SERENIIITY: ");
 		str = id_getline(0);
 		str2 = id_str_to_word_tab(str);
 		if (check_list(begin,str2) == 0)

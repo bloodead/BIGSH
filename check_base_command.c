@@ -21,15 +21,16 @@ int	check_char(char* one, char* tow)
 int	check_list(t_list* begin, char** str)
 {
 	t_list*	elem;
+	pid_t pid;
 
 	elem = begin;
 	while (elem != 0)
 	{
 		if (check_char(str[0],elem->name))
-		
 		{
-			
-			elem->func(str);
+			pid = fork();
+			if (pid == 0)	
+				elem->func(str);
 			return (1);
 		}
 		elem = elem->next;
