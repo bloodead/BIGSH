@@ -75,10 +75,14 @@ char**	 id_str_to_word_tab(char* str)
 	count2 = 0;
 	count = id_count_words(str);
 	ptr = malloc(sizeof(char) * count);
+	if (ptr == NULL)
+		exit (0);
 	while (count2 != count)
 	{
 		ret_letters = id_count_letters(str, &pos);
-		ptr[count2] = malloc(sizeof(char) * ret_letters);	
+		ptr[count2] = malloc(sizeof(char) * ret_letters);
+		if (ptr[count2] == NULL)
+			exit (0);
 		count2 = count2 + 1;
 	}
 	ptr = id_print_word(str, ptr);
