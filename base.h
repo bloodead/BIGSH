@@ -10,7 +10,7 @@ typedef struct	s_list_command
 
 void	id_free(char* str, char** str2, t_list*);
 int     redirect_fd_pip(int fd);
-void	cat_command(char** str);
+void	echo_command(char** str);
 void	exit_command(char** str);
 int     check_char(char* one, char* tow);
 void	id_print_str(char* str);
