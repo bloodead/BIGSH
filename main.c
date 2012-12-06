@@ -6,13 +6,6 @@
 
 extern char**	environ;
 
-/*void	id_free(char** str, t_list*)
-{
-	t_list*	elem;
-
-	free(str);
-}*/
-
 int	main(void)
 {
 	int	i;
@@ -32,6 +25,6 @@ int	main(void)
 			id_print_str("Error command\n");
 	}
 	id_print_str("test");
-	//free(str2, begin);
+	id_free(str, str2, begin);
 	return (0);
 }
