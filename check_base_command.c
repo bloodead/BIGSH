@@ -2,7 +2,6 @@
 #include <unistd.h>
 #include <stdio.h>
 
-
 int	check_char(char* one, char* tow)
 {
 	int	i;

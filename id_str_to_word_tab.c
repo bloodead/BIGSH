@@ -21,7 +21,7 @@ char** id_print_word(char* str, char** ptr)
 			pos = 0;
 		}
 		while (str[pos2] == ' ')
-				pos2 = pos2 + 1;
+			pos2 = pos2 + 1;
 	}
 	return (ptr);
 }
@@ -85,7 +85,6 @@ char**	 id_str_to_word_tab(char* str)
 			exit (0);
 		count2 = count2 + 1;
 	}
-	ptr = id_print_word(str, ptr);
-	
+	ptr = id_print_word(str, ptr);	
 	return (ptr);
 }

@@ -8,7 +8,6 @@ void	echo_command(char** str)
 {
 	char*	tab[2];
 	int	fd;
-
 	
 	tab[0] = "/bin/echo";
 	tab[1] = str[1];
@@ -17,6 +16,5 @@ void	echo_command(char** str)
 
 void	exit_command(char** str)
 {
-	
 	printf("HAHA\n");
 }
