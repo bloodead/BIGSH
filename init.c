@@ -4,6 +4,8 @@
 void	print_list(char* str, t_list* elem,void (*func)(char**))
 {
 	elem->next = (t_list*)malloc(sizeof(*elem));
+	if (elem == NULL)
+		exit (0);
 	elem->name = str;
 	elem->func = (*func);
 }
@@ -14,6 +16,8 @@ t_list*	init(void)
 	t_list*	elem;
 	
 	elem = (t_list*)malloc(sizeof(*elem));
+	if (elem == NULL)
+		exit (0);
 	begin = elem;
 	print_list("cat", elem, cat_command);
 	elem = elem->next;

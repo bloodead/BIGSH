@@ -21,7 +21,7 @@ void	id_free_list(t_list* begin)
 	free(begin);
 }
 
-void	id_free_getline(char** str2, char str)
+void	id_free_getline(char** str2, char* str)
 {
 	int	count;
 	int	count2;

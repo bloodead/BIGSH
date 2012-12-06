@@ -8,8 +8,8 @@ int	inc_buf(char** buf, int* size,char c)
 
 	*size = *size + 1;
 	tmp = realloc(*buf, sizeof(*tmp) * (*size + 1));
-	if (tmp == 0)
-		return(1);
+	if (tmp == NULL)
+		exit (0);
 	tmp[*size] = '\0';
 	tmp[*size - 1] = c;
 	*buf = tmp;
@@ -29,8 +29,8 @@ char*	id_getline(int fd)
 	if (ret <= 0)
 		return(0);
 	buf = malloc(sizeof(*buf));
-	if (buf == 0)
-		return (0);
+	if (buf == NULL)
+		exit (0);
 	buf[0] = 0;
 	while (ret > 0)
 	{
