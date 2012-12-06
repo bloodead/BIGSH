@@ -7,6 +7,7 @@ typedef struct	s_list_command
 	struct	s_list_command*	next;
 }		t_list;
 
+void	child(int pip[2]);
 int     check_char(char* one, char* tow);
 void	id_print_str(char* str);
 void	print_list(char* str, t_list* elem);

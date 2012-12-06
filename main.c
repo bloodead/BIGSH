@@ -6,6 +6,12 @@
 
 extern char**	environ;
 
+void	id_free(char** str, t_list*);
+{
+	t_list*	elem;
+
+	free(str)
+}
 
 int	main(void)
 {
@@ -23,8 +29,9 @@ int	main(void)
 		str2 = id_str_to_word_tab(str);
 		if (check_list(begin,str2[0]) == 0)
 			id_print_str("Error command\n");
-		else
-			exec_command(str2);
+		//else
+			//exec_command(str2);
 	}
+	//free(str2, begin);
 	return (0);
 }
