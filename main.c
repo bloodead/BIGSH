@@ -7,6 +7,13 @@
 
 extern char**	environ;
 
+void	id_print_error(char** str)
+{
+	id_print_str(str[0]);
+	id_print_str(": command not found");
+	id_print_str("\n");
+}
+
 int	main(void)
 {
 	int	i;
@@ -15,17 +22,15 @@ int	main(void)
 	t_list*	begin;
 
 	begin = init();
-	str = "0";
 	while (1)
 	{
 		id_print_str("SHELL BLOODEAD SERENIIITY: ");
 		str = id_getline(0);
-		str2 = id_str_to_word_tab(str);
+		str2 = (char**)id_str_to_word_tab(str);
 		if (check_list(begin,str2) == 0)
-			id_print_str("Error command\n");
+			id_print_error(str2);
 		id_free(str, str2, begin);
 	}
 	free(begin);
-	id_print_str("test");
 	return (0);
 }

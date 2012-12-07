@@ -4,24 +4,24 @@
 void	print_command(t_list* elem)
 {
 	//print_list("history", elem, history_command);
-	//elem = elem->next; 
-	//print_list("exit", elem, exit_command);
 	//elem = elem->next;
-	//print_list("pwd", elem, pwd_command);
-	//elem = elem->next;
-	//print_list("which", elem, which_command);
-	//elem = elem->next;
+	print_list("exit", elem, exit_command);
+	elem = elem->next;
+	print_list("pwd", elem, pwd_command);
+	elem = elem->next;
+	print_list("which", elem, which_command);
+	elem = elem->next;
 	//print_list("export", elem, export_command);
 	//elem = elem->next;
-	//print_list("env", elem, env_command);
-	//elem = elem->next;
+	print_list("env", elem, env_command);
+	elem = elem->next;
 	//print_list("cd", elem, cd_command);
 	//elem = elem->next;
 	//print_list("alias", elem, alias_command);
 	//elem = elem->next;
 	print_list("echo", elem, echo_command);
-	//elem = elem->next;
-	//print_list("kill", elem, kill_command);
+	elem = elem->next;
+	print_list("kill", elem, kill_command);
 	elem->next = 0;
 }
 
